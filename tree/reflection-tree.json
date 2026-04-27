@@ -1,0 +1,25 @@
+{
+    "meta": {
+        "name": "Daily Reflection Tree",
+        "version": "1.0",
+        "startNode": "START",
+        "description": "Deterministic end-of-day reflection tree to help you review your day and plan for tomorrow."
+    },
+    "axes": {
+        "axes1": {
+            "name": "Locus of Control",
+            "positive": "Internal",
+            "negative": "External"
+        },
+        "axes2": {
+            "name": "Orientation",
+            "positive": "contribution",
+            "negative": "entitlement"
+        },
+        "axes3": {
+            "name": "Radius",
+            "positive": "other",
+            "negative": "self"
+        }
+    }
+}
