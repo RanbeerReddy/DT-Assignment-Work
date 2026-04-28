@@ -61,13 +61,14 @@
     },
 
     "A1_ADAPTIVE": {
-      "type": "question",
-      "text": "If you could rewind to 9 AM, would you change your strategy, or would you just hope for better luck?",
-      "options": [
-        { "label": "I’d change my strategy—I see the gap now.", "next": "A1_D2", "signals": ["axis1:internal"] },
-        { "label": "I’d just hope for a smoother environment.", "next": "A1_D2", "signals": ["axis1:external"] }
-      ]
-    },
+    "type": "question",
+    "text": "If you could rewind to 9 AM, what would you most likely change?",
+    "options": [
+      { "label": "I’d change my strategy—I see the gap now.", "next": "A1_D2", "signals": ["axis1:internal"] },
+      { "label": "I’d adjust a few things but context still matters.", "next": "A1_D2", "signals": ["axis1:internal", "axis1:external"] },
+      { "label": "I’d rely on the situation being smoother.", "next": "A1_D2", "signals": ["axis1:external"] }
+    ]
+  },
 
     "A1_D2": {
       "type": "decision",
@@ -104,20 +105,20 @@
       "text": "At any point today, did you do something that wasn't on your 'official' list, simply because it needed doing?",
       "options": [
         { "label": "Yes—I stepped in to unblock someone else.", "next": "A2_Q2", "signals": ["axis2:contribution"] },
-        { "label": "I thought about it, but I stayed in my lane.", "next": "A2_Q2", "signals": ["axis2:entitlement"] },
-        { "label": "I spent the day waiting for others to unblock me.", "next": "A2_Q2", "signals": ["axis2:entitlement"] }
-      ]
-    },
+        { "label": "I considered it, but prioritized my own commitments.", "next": "A2_Q2", "signals": ["axis2:entitlement"] },
+        { "label": "I focused mainly on what was assigned to me.", "next": "A2_Q2", "signals": ["axis2:entitlement"] }
+    ]
+  },
 
     "A2_Q2": {
       "type": "question",
-      "text": "When you finished a task, was your first thought 'I hope they notice' or 'I hope this helps'?",
+      "text": "When you finished a task, what thought felt closest?",
       "options": [
-        { "label": "'I hope this helps'—I'm focused on the impact.", "next": "A2_D1", "signals": ["axis2:contribution"] },
-        { "label": "'I hope they notice'—I need my effort recognized.", "next": "A2_D1", "signals": ["axis2:entitlement"] },
-        { "label": "Neither—I just wanted to get it over with.", "next": "A2_D1", "signals": ["axis2:entitlement"] }
-      ]
-    },
+        { "label": "I hope this helps the team or outcome.", "next": "A2_D1", "signals": ["axis2:contribution"] },
+        { "label": "Both impact and recognition matter to me.", "next": "A2_D1", "signals": ["axis2:contribution", "axis2:entitlement"] },
+        { "label": "I want my effort to be clearly recognized.", "next": "A2_D1", "signals": ["axis2:entitlement"] }
+    ]
+  },
 
     "A2_D1": {
       "type": "decision",
@@ -133,6 +134,7 @@
       "text": "If a colleague was drowning in work, would you see it as an inconvenience or an opportunity to be a teammate?",
       "options": [
         { "label": "An opportunity—that's how we win.", "next": "A2_ADAPTIVE1", "signals": ["axis2:contribution"] },
+        { "label": "Help if it doesn’t disrupt my priorities too much.", "next": "A2_ADAPTIVE1", "signals": ["axis2:contribution", "axis2:entitlement"] },
         { "label": "An inconvenience—I have my own burdens.", "next": "A2_ADAPTIVE1", "signals": ["axis2:entitlement"] }
       ]
     },
@@ -163,7 +165,7 @@
 
     "A2_REF_ENT": {
       "type": "reflection",
-      "text": "You focused on self-preservation today. In a high-stress world, that’s a survival tactic—but long-term growth requires shifting from 'what's mine' to 'what's ours'.",
+      "text": "You focused on maintaining balance for yourself today. That’s understandable—over time, people often experiment with shifting toward shared outcomes.",
       "next": "BRIDGE_2_3"
     },
 
@@ -216,12 +218,13 @@
 
     "A3_ADAPTIVE1": {
       "type": "question",
-      "text": "Think of the most important person you interacted with today. Did you really hear them, or were you just waiting for your turn to speak?",
+      "text": "Think of the most important person you interacted with today. How present were you in that moment?",
       "options": [
-        { "label": "I really heard them.", "next": "A3_D2", "signals": ["axis3:others"] },
-        { "label": "I was just waiting for my turn.", "next": "A3_D2", "signals": ["axis3:self"] }
+        { "label": "I was fully present and listening closely.", "next": "A3_D2", "signals": ["axis3:others"] },
+        { "label": "Partly present, partly focused on my own thoughts.", "next": "A3_D2", "signals": ["axis3:others", "axis3:self"] },
+        { "label": "Mostly focused on what I needed to say or do.", "next": "A3_D2", "signals": ["axis3:self"] }
       ]
-    },
+    } ,
 
     "A3_D2": {
       "type": "decision",
@@ -251,7 +254,7 @@
 
     "END": {
       "type": "end",
-      "text": "Deep breath. You're done. Go be a human for a while.."
+      "text": "Deep breath. You're done. Go be a human for a while."
     }
   }
 }
