@@ -1,3 +1,5 @@
+```mermaid
+
 %%{init: {'theme': 'base', 'themeVariables': { 'primaryColor': '#e1f5fe', 'edgeLabelBackground':'#ffffff', 'tertiaryColor': '#fff'}}}%%
 graph TD
     %% --- MAIN FLOW ---
@@ -143,3 +145,5 @@ graph TD
     class BRIDGE_1_2,BRIDGE_2_3 bridge;
     class SUMMARY summary;
     class Axis1,Axis2,Axis3 boundary;
+
+    ---
